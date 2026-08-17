@@ -76,6 +76,14 @@ The function returns one row per identified pregnancy episode:
 | `prenatal_start` | Beginning of the estimated prenatal window |
 | `prenatal_end` | End of the estimated prenatal window |
 
+## Endpoint code mapping
+
+The algorithm expects pregnancy endpoint records to be mapped to the standardized outcome categories before use. Clinical code lists are not redistributed in this repository.
+
+The code lists and supporting materials used by Moll et al. are available with the original publication:
+
+https://doi.org/10.1007/s40264-021-01113-8
+
 ## Testing
 
 Run the automated tests from the repository root:
