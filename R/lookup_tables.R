@@ -12,14 +12,14 @@ endpoint_hierarchy <- c(
 )
 
 window_rules <- tibble::tribble(
-  ~outcome, ~max_term_days, ~min_term_days,
-  "livebirth",             301, 154,
-  "stillbirth",            301, 140,
-  "delivery",              301, 140,
-  "hydatidiform_mole",     112,  42,
-  "ectopic",                84,  42,
-  "induced_abortion",      168,  42,
-  "spontaneous_abortion",  133,  28
+  ~outcome, ~max_term_days, ~min_term_days, ~min_gap_to_next_days,
+  "livebirth",             301, 154, 28,
+  "stillbirth",            301, 140, 28,
+  "delivery",              301, 140, 28,
+  "hydatidiform_mole",     112,  42, 14,
+  "ectopic",                84,  42, 14,
+  "induced_abortion",      168,  42, 14,
+  "spontaneous_abortion",  133,  28, 14
 )
 
 spacing_rules <- tibble::tribble(
