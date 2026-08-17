@@ -2,7 +2,7 @@
 
 An R implementation adapted from the pregnancy episode construction approach described by Moll et al. (2021).
 
-The algorithm identifies distinct pregnancy episodes from longitudinal pregnancy endpoint records using an outcome hierarchy, minimum spacing requirements, and outcome-specific prenatal windows.
+The algorithm constructs pregnancy episodes from longitudinal real-world healthcare data, such as administrative claims and electronic health records. It uses coded pregnancy endpoints, an outcome hierarchy, minimum spacing requirements, and outcome-specific prenatal windows to distinguish clinically plausible pregnancy episodes.
 
 ## Overview
 
@@ -17,6 +17,9 @@ The algorithm:
 7. Excludes episodes that do not meet minimum duration requirements
 
 ## Input
+
+The algorithm accepts standardized pregnancy endpoint records derived from longitudinal real-world healthcare data, including administrative claims or electronic health records.
+
 
 The input must contain:
 
