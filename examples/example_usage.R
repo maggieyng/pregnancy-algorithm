@@ -49,4 +49,3 @@ pregnancy_episodes <- construct_pregnancy_episodes(
 
 print(pregnancy_episodes)
 
-source("examples/example_usage.R")
