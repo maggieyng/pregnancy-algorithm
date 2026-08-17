@@ -36,10 +36,10 @@ construct_prenatal_windows <- function(
     ) |>
     dplyr::ungroup() |>
     dplyr::select(
-      .data$patient_id,
-      .data$outcome,
-      .data$outcome_date,
-      .data$prenatal_start,
-      .data$prenatal_end
+      "patient_id",
+      "outcome",
+      "outcome_date",
+      "prenatal_start",
+      "prenatal_end"
     )
 }

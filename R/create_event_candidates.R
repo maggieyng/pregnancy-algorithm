@@ -30,9 +30,9 @@ create_event_candidates <- function(
       .groups = "drop"
     ) |>
     dplyr::select(
-      .data$patient_id,
-      .data$event_id,
-      .data$outcome_date,
-      .data$outcome
+      "patient_id",
+      "event_id",
+      "outcome_date",
+      "outcome"
     )
 }

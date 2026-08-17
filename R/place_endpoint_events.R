@@ -1,29 +1,36 @@
 #' Check whether two pregnancy endpoints meet the required spacing
 meets_spacing_rule <- function(date1, outcome1, date2, outcome2, rules) {
   if (date1 <= date2) {
-    preceding <- outcome1
-    following <- outcome2
+    preceding_value <- outcome1
+    following_value <- outcome2
     observed_gap <- as.integer(date2 - date1)
   } else {
-    preceding <- outcome2
-    following <- outcome1
+    preceding_value <- outcome2
+    following_value <- outcome1
     observed_gap <- as.integer(date1 - date2)
   }
   
   required_gap <- rules |>
     dplyr::filter(
-      .data$preceding == preceding,
-      .data$following == following
+      .data$preceding == .env$preceding_value,
+      .data$following == .env$following_value
     ) |>
-    dplyr::pull(.data$gap_days)
+    dplyr::pull("gap_days")
   
   if (length(required_gap) != 1L) {
-    stop("A required endpoint spacing rule is missing or duplicated.")
+    stop(
+      "Expected one spacing rule for `",
+      preceding_value,
+      "` followed by `",
+      following_value,
+      "`, but found ",
+      length(required_gap),
+      "."
+    )
   }
   
   observed_gap >= required_gap
 }
-
 #' Place one patient's candidate endpoints on a plausible timeline
 place_events_one_patient <- function(
     events,

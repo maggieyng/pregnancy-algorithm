@@ -25,5 +25,5 @@ resolve_endpoint_days <- function(events) {
         character(1)
       )
     ) |>
-    dplyr::select(.data$patient_id, .data$service_date, .data$outcome)
+    dplyr::select("patient_id", "service_date", "outcome")
 }
